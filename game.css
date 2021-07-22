@@ -3,6 +3,7 @@ body {
 }
 
 .Info {
+    position: relative;
     display: flex;
     text-align: center;
     justify-content: space-between;
@@ -10,4 +11,10 @@ body {
     margin-left: 45px;
     margin-right: 45px;
     font-size: 25px;
+}
+
+#ship {
+    position:relative;
+    left: 40rem;
+    top: 10rem;
 }
