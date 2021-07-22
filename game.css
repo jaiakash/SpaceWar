@@ -1,0 +1,13 @@
+body {
+    background-color:darkblue;
+}
+
+.Info {
+    display: flex;
+    text-align: center;
+    justify-content: space-between;
+    margin-top: 45px;
+    margin-left: 45px;
+    margin-right: 45px;
+    font-size: 25px;
+}
