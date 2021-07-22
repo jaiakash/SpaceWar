@@ -6,4 +6,5 @@ planet Ampelos. The planet is home to a species called “Whitespikes'' and now
 they are threatened by your presence. Design a Web Shooting Game using
 HTML and Canvas API depicting the above situational battle between your
 Spaceship and the Whitespikes.
-Submitted by Akash Jaiswal, Roll no 103120007
+
+### Submitted by Akash Jaiswal, Roll no 103120007
