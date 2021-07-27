@@ -28,12 +28,25 @@ function gameLoop() {
     bullet_js.style.top = parseFloat(bullet_js.style.top)-0.5 +"%";
 
     if(parseFloat(bullet_js.style.top) < 0 ){
+        bullet_js.style.top = "0%";
+        bullet_js.style.left = "0%" 
         bullet_js.style.display = "none";
     }
 
+    collisionDetector();
     window.requestAnimationFrame(gameLoop);
 }
 
+
+function collisionDetector(){
+    //console.log(Math.abs(parseFloat(bullet_js.style.top)-parseFloat(enemy_js.style.top)));
+    if(Math.abs(parseFloat(bullet_js.style.top)-parseFloat(enemy_js.style.top))<5 &&
+        Math.abs(parseFloat(bullet_js.style.left)-parseFloat(enemy_js.style.left))<5){
+        score++;
+        bullet_js.style.display = "none";
+        enemyLoop();
+    }
+}
 
 function arrowKey(e) {
     e = e || window.event;
