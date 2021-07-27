@@ -24,3 +24,7 @@ body {
 #Enemy {
     position:absolute;
 }
+
+#Bullet {
+    position:absolute;
+}

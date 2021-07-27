@@ -5,30 +5,31 @@ var ship_js = document.getElementById("Ship");
 ship_js.style.top = "75%";
 ship_js.style.left = "50%";
 
+var bullet_js = document.getElementById("Bullet");
+bullet_js.style.display = "none";
+
 var enemy_js = document.getElementById("Enemy");
-enemy_js.style.top = getRandomInt(10,50)+"%";
-enemy_js.style.left = getRandomInt(5,90)+"%";
 
 document.onkeydown = arrowKey;
 
 gameLoop();
+enemyLoop();
+
+function enemyLoop() {
+    enemy_js.style.top = getRandomInt(10,50)+"%";
+    enemy_js.style.left = getRandomInt(5,90)+"%";
+}
 
 function gameLoop() {
     document.getElementById("time").innerHTML = "Time : "+time.toFixed(2);
     document.getElementById("score").innerHTML = "Score : "+score;
     time+=0.01;
 
-    // highScore();
-    // document.getElementById("board").innerHTML = "Score : "+score.toFixed(1);
-    // //create a new block, if old one is lost
-    // if(rectX<0){
-    //     speed+=0.5;
-    //     rectX = 550;
-    //     randomY = (Math.random()<0.5) ? 5:65;
-    // }
+    bullet_js.style.top = parseFloat(bullet_js.style.top)-0.5 +"%";
 
-    // collision_detector();
-    // draw();
+    if(parseFloat(bullet_js.style.top) < 0 ){
+        bullet_js.style.display = "none";
+    }
 
     window.requestAnimationFrame(gameLoop);
 }
@@ -47,6 +48,13 @@ function arrowKey(e) {
     }
     else if (e.keyCode == '39') {   // right arrow
         ship_js.style.left = parseInt(ship_js.style.left)+1+"%";
+    }
+    else if (e.keyCode == '32') {   //space
+        if(bullet_js.style.display == "none"){
+            bullet_js.style.display = "block";
+            bullet_js.style.top = ship_js.style.top;
+            bullet_js.style.left = ship_js.style.left;
+        }
     }
 
 }
