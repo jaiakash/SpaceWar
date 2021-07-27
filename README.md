@@ -9,8 +9,7 @@ Spaceship and the Whitespikes.
 
 ## Basic Mode
 1. Users should be able to move the spaceship in all four directions. <b>Done</b> The
-aliens will be moving in the right to left direction continuously.<b>Done</b> Once an
-alien collides with the spaceship, it is destroyed.
+aliens will be moving in the top to bottom direction continuously. <b>Done</b> Once an alien collides with the spaceship, it is destroyed. <b>Done</b>
 
 2. Create a scoreboard and be creative with the scoring system. Think how
 you can have different scoring based on the aliens shot. At the end of the

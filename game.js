@@ -19,6 +19,7 @@ enemyLoop();
 function enemyLoop() {
     enemy_js.style.top = getRandomInt(10,50)+"%";
     enemy_js.style.left = getRandomInt(5,90)+"%";
+    enemy_speed+=0.05;
 }
 
 function gameLoop() {
@@ -27,9 +28,9 @@ function gameLoop() {
     time+=0.01;
 
     bullet_js.style.top = parseFloat(bullet_js.style.top)-0.5+"%";
-    enemy_js.style.left = parseFloat(enemy_js.style.left)-enemy_speed+"%";
+    enemy_js.style.top = parseFloat(enemy_js.style.top)+enemy_speed+"%";
 
-    if(parseFloat(enemy_js.style.left) < 0 ){
+    if(parseFloat(enemy_js.style.top) > 90 ){
         enemyLoop();
     }
 
@@ -46,11 +47,24 @@ function gameLoop() {
 
 function collisionDetector(){
     //console.log(Math.abs(parseFloat(bullet_js.style.top)-parseFloat(enemy_js.style.top)));
+
+    // Collision for Bullet and Enemy
     if(Math.abs(parseFloat(bullet_js.style.top)-parseFloat(enemy_js.style.top))<5 &&
         Math.abs(parseFloat(bullet_js.style.left)-parseFloat(enemy_js.style.left))<5){
         score++;
         bullet_js.style.display = "none";
         enemyLoop();
+    }
+
+    // Collision for Enemy and Ship
+    // Game Over
+    if(Math.abs(parseFloat(ship_js.style.top)-parseFloat(enemy_js.style.top))<5 &&
+        Math.abs(parseFloat(ship_js.style.left)-parseFloat(enemy_js.style.left))<5){
+        alert("Game Over, Your final score is "+score);
+        score=0;
+        time=0;
+        enemyLoop();
+        location.reload();
     }
 }
 
