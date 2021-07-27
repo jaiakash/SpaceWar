@@ -8,8 +8,8 @@ HTML and Canvas API depicting the above situational battle between your
 Spaceship and the Whitespikes.
 
 ## Basic Mode
-1. Users should be able to move the spaceship in all four directions. <b>Done<b> The
-aliens will be moving in the right to left direction continuously.<b>Done<b> Once an
+1. Users should be able to move the spaceship in all four directions. <b>Done</b> The
+aliens will be moving in the right to left direction continuously.<b>Done</b> Once an
 alien collides with the spaceship, it is destroyed.
 
 2. Create a scoreboard and be creative with the scoring system. Think how
