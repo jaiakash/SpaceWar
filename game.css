@@ -1,14 +1,30 @@
 body {
-    background-image: url("./back.jpg"); 
+    background: #111a22; 
+    background-image: url("./back.png");
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: 100% 100%;
+}
+
+canvas {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #111a22;
+  }
+
+#starwar{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 20%;
 }
 
 .Info {
     position: relative;
     display: flex;
     text-align: center;
+    font-family: 'Sigmar One';
     color:aliceblue;
     justify-content: space-between;
     margin-top: 45px;
