@@ -1,6 +1,7 @@
 var time = 0;
 var score = 0;
 var enemy_speed = 0.1;
+var points = 1;
 
 var ship_js = document.getElementById("Ship");
 var bullet_js = document.getElementById("Bullet");
@@ -28,9 +29,11 @@ function enemyLoop() {
 function gameLoop() {
     document.getElementById("time").innerHTML = "Time : "+time.toFixed(2);
     document.getElementById("score").innerHTML = "Score : "+score;
-    document.getElementById("level").innerHTML = "Level : "+enemy_speed*10;
+    document.getElementById("level").innerHTML = "Level : "+(enemy_speed*10).toFixed(0);
     document.getElementById("highscore").innerHTML = "High Score : "+localStorage.getItem("HighScore");
     time+=0.02;
+
+    points=parseInt(time/30) + 1;
 
     bullet_js.style.top = parseFloat(bullet_js.style.top)-0.5+"%";
     enemy_js.style.top = parseFloat(enemy_js.style.top)+enemy_speed+"%";
@@ -60,7 +63,7 @@ function collisionDetector(){
     // Collision for Bullet and Enemy
     if(Math.abs(parseFloat(bullet_js.style.top)-parseFloat(enemy_js.style.top))<5 &&
         Math.abs(parseFloat(bullet_js.style.left)-parseFloat(enemy_js.style.left))<5){
-        score++;
+        score+=points;
         bullet_js.style.display = "none";
         enemyLoop();
     }

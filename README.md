@@ -15,9 +15,11 @@ aliens will be moving in the top to bottom direction continuously. <b>Done</b> O
 game, both the game score and high score should be printed. <b>Done</b>
 
 3. Have a timer system, such that the User is advanced to a higher level if
-the spaceship survives till a certain time. Be creative on how the different
-levels for the game will be. <b>Done</b>
+the spaceship survives till a certain time. 
+Speed of enemy increases every 10 seconds <b>Done</b>
 
 4. Once the user crosses a certain level bonus points should be awarded.
+Point each kill gets added after each 30 seconds.
+<b>Done</b>
 
 ### Submitted by Akash Jaiswal, Roll no 103120007
