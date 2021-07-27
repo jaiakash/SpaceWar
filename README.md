@@ -7,6 +7,8 @@ they are threatened by your presence. Design a Web Shooting Game using
 HTML and Canvas API depicting the above situational battle between your
 Spaceship and the Whitespikes.
 
+## Project Link https://jaiakash.github.io/SpaceWar/
+
 ## Basic Mode
 1. Users should be able to move the spaceship in all four directions. <b>Done</b> The
 aliens will be moving in the top to bottom direction continuously. <b>Done</b> Once an alien collides with the spaceship, it is destroyed. <b>Done</b>
