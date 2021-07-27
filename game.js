@@ -1,5 +1,6 @@
 var time = 0;
 var score = 0;
+var enemy_speed = 0.1;
 
 var ship_js = document.getElementById("Ship");
 ship_js.style.top = "75%";
@@ -25,7 +26,12 @@ function gameLoop() {
     document.getElementById("score").innerHTML = "Score : "+score;
     time+=0.01;
 
-    bullet_js.style.top = parseFloat(bullet_js.style.top)-0.5 +"%";
+    bullet_js.style.top = parseFloat(bullet_js.style.top)-0.5+"%";
+    enemy_js.style.left = parseFloat(enemy_js.style.left)-enemy_speed+"%";
+
+    if(parseFloat(enemy_js.style.left) < 0 ){
+        enemyLoop();
+    }
 
     if(parseFloat(bullet_js.style.top) < 0 ){
         bullet_js.style.top = "0%";
