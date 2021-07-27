@@ -13,8 +13,6 @@ body {
     font-size: 25px;
 }
 
-#ship {
-    position:relative;
-    left: 40rem;
-    top: 10rem;
+#Ship {
+    position:absolute;
 }

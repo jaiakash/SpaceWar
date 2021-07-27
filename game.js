@@ -1,30 +1,27 @@
 document.getElementById("time").innerHTML = "Time : 0";
 document.getElementById("score").innerHTML = "Score : 0";
 
-var ship_js = document.getElementById("ship")
+var ship_js = document.getElementById("Ship");
+ship_js.style.top = "75%";
+ship_js.style.left = "50%";
 
+document.onkeydown = arrowKey;
 
+function arrowKey(e) {
 
-function getKeyAndMove(e) {
-    console.log("Aksh")
-    var key_code = e.which || e.keyCode;
-    switch (key_code) {
-        case 37: //left arrow key
-            ship_js.style.left = parseInt(ship_js.style.left) - 5 + "px";
-            break;
-        case 38: //Up arrow key
-            ship_js.style.top = parseInt(ship_js.style.top) - 5 + "px";
-            break;
-        case 39: //right arrow key
-            ship_js.style.left = parseInt(ship_js.style.left) + 5 + "px";
-            break;
-        case 40: //down arrow key
-            ship_js.style.top = parseInt(ship_js.style.top) + 5 + "px";
-            break;
+    e = e || window.event;
+
+    if (e.keyCode == '38') {    // up arrow
+        ship_js.style.top = parseInt(ship_js.style.top)-1+"%";
     }
-}
+    else if (e.keyCode == '40') {   // down arrow
+        ship_js.style.top = parseInt(ship_js.style.top)+1+"%";
+    }
+    else if (e.keyCode == '37') {   // left arrow
+        ship_js.style.left = parseInt(ship_js.style.left)-1+"%";
+    }
+    else if (e.keyCode == '39') {   // right arrow
+        ship_js.style.left = parseInt(ship_js.style.left)+1+"%";
+    }
 
-function docReady(){
-    console.log("Aksh")
-    window.addEventListener('keydown', getKeyAndMove);
 }
