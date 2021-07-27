@@ -8,7 +8,7 @@ var points = 1;
 var ship_js = document.getElementById("Ship");
 var bullet_js = document.getElementById("Bullet");
 var enemy_js = document.getElementById("Enemy");
-ship_js.style.top = "75%";
+ship_js.style.top = "90%";
 ship_js.style.left = "50%";
 bullet_js.style.display = "none";
 
@@ -41,7 +41,7 @@ function enemyLoop() {
     document.getElementById('Enemy').innerHTML = "";
     imgRandom();
     enemy_js.style.top = getRandomInt(10,50)+"%";
-    enemy_js.style.left = getRandomInt(5,90)+"%";
+    enemy_js.style.left = getRandomInt(15,80)+"%";
 }
 
 function gameLoop() {
@@ -113,15 +113,19 @@ function collisionDetector(){
 function arrowKey(e) {
     e = e || window.event;
     if (e.keyCode == '38') {    // up arrow
-        ship_js.style.top = parseInt(ship_js.style.top)-5+"%";
+        if(parseInt(ship_js.style.top)>5)
+            ship_js.style.top = parseInt(ship_js.style.top)-5+"%";
     }
-    else if (e.keyCode == '40') {   // down arrow
-        ship_js.style.top = parseInt(ship_js.style.top)+5+"%";
+    else if (e.keyCode == '40') { 
+        if(parseInt(ship_js.style.top)<90)  // down arrow
+            ship_js.style.top = parseInt(ship_js.style.top)+5+"%";
     }
     else if (e.keyCode == '37') {   // left arrow
+        if(parseInt(ship_js.style.left)>5)
         ship_js.style.left = parseInt(ship_js.style.left)-5+"%";
     }
     else if (e.keyCode == '39') {   // right arrow
+        if(parseInt(ship_js.style.left)<95)
         ship_js.style.left = parseInt(ship_js.style.left)+5+"%";
     }
     else if (e.keyCode == '32') {   //space
