@@ -1,8 +1,10 @@
+// Initialising all variables 
 var time = 0;
 var score = 0;
 var enemy_speed = 0.1;
 var points = 1;
 
+// Initialising all element variables 
 var ship_js = document.getElementById("Ship");
 var bullet_js = document.getElementById("Bullet");
 var enemy_js = document.getElementById("Enemy");
@@ -14,10 +16,12 @@ document.onkeydown = arrowKey;
 
 console.log(localStorage.getItem('HighScore'));
 
+// Save high score to 0 if is null
 if(localStorage.getItem('HighScore')==null){
     localStorage.setItem('HighScore', "0");
 }
 
+// 4 different enemy type
 var imgArray = ['enemy1.png', 'enemy2.png', 'enemy3.png', 'enemy0.png'];
 var basePath="./enemy/";
 
@@ -28,7 +32,9 @@ function imgRandom() {
     document.getElementById('Enemy').appendChild(image);
 }
 
+// gameLoop - called every frame
 gameLoop();
+// enemyLoop - called every new enemy respawn
 enemyLoop();
 
 function enemyLoop() {
@@ -50,14 +56,17 @@ function gameLoop() {
     bullet_js.style.top = parseFloat(bullet_js.style.top)-0.5+"%";
     enemy_js.style.top = parseFloat(enemy_js.style.top)+enemy_speed+"%";
 
+    // Increase speed every 10 seconds
     if(parseInt(time)>enemy_speed*100){
         enemy_speed+=0.1;
     }
 
+    // Respawn enemy if it hits bottom
     if(parseFloat(enemy_js.style.top) > 90 ){
         enemyLoop();
     }
 
+    // Hide bullet if crosses the top area
     if(parseFloat(bullet_js.style.top) < 0 ){
         bullet_js.style.top = "0%";
         bullet_js.style.left = "0%" 
@@ -99,6 +108,8 @@ function collisionDetector(){
     }
 }
 
+// Arrow keys for movement
+// Space for bullet firing
 function arrowKey(e) {
     e = e || window.event;
     if (e.keyCode == '38') {    // up arrow

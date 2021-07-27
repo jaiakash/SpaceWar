@@ -10,14 +10,11 @@ Spaceship and the Whitespikes.
 ## Basic Mode (All Done)
 
 ## Hacker Mode
-1. Have different categories of aliens in the game. The spawned aliens
-should be randomized in terms of categories.
-2. Different aliens should require different amounts of bullet shots to be
-killed.
+1. Have different categories of aliens in the game. The spawned aliens should be randomized in terms of categories. <b>Done</b>
+2. Different aliens should require different amounts of bullet shots to be killed.
 3. Have the feature for bonus powers for the spaceship once a certain score
 has been obtained on the scoreboard.
-4. Think about how you can add bonuses or special levels to the game and
-how will be the scoring for such levels.
+4. Think about how you can add bonuses or special levels to the game and how will be the scoring for such levels.
 ## Git (All Done)
 1. Used git from terminal to push commits.
 2. Added readme file with the completed task details.
