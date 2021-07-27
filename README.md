@@ -22,4 +22,12 @@ Speed of enemy increases every 10 seconds <b>Done</b>
 Point each kill gets added after each 30 seconds.
 <b>Done</b>
 
+5. Added background music. Poket Tanks one ;)
+<b>Done</b>
+
+## Git (All Done)
+1. Used git from terminal to push commits.
+2. Added readme file with the completed task details.
+3. Used meaningful commit messages. 
+
 ### Submitted by Akash Jaiswal, Roll no 103120007
