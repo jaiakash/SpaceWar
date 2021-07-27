@@ -23,17 +23,21 @@ enemyLoop();
 function enemyLoop() {
     enemy_js.style.top = getRandomInt(10,50)+"%";
     enemy_js.style.left = getRandomInt(5,90)+"%";
-    enemy_speed+=0.1;
 }
 
 function gameLoop() {
     document.getElementById("time").innerHTML = "Time : "+time.toFixed(2);
     document.getElementById("score").innerHTML = "Score : "+score;
+    document.getElementById("level").innerHTML = "Level : "+enemy_speed*10;
     document.getElementById("highscore").innerHTML = "High Score : "+localStorage.getItem("HighScore");
-    time+=0.01;
+    time+=0.02;
 
     bullet_js.style.top = parseFloat(bullet_js.style.top)-0.5+"%";
     enemy_js.style.top = parseFloat(enemy_js.style.top)+enemy_speed+"%";
+
+    if(parseInt(time)>enemy_speed*100){
+        enemy_speed+=0.1;
+    }
 
     if(parseFloat(enemy_js.style.top) > 90 ){
         enemyLoop();
