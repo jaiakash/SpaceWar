@@ -3,15 +3,19 @@ var score = 0;
 var enemy_speed = 0.1;
 
 var ship_js = document.getElementById("Ship");
+var bullet_js = document.getElementById("Bullet");
+var enemy_js = document.getElementById("Enemy");
 ship_js.style.top = "75%";
 ship_js.style.left = "50%";
-
-var bullet_js = document.getElementById("Bullet");
 bullet_js.style.display = "none";
 
-var enemy_js = document.getElementById("Enemy");
-
 document.onkeydown = arrowKey;
+
+console.log(localStorage.getItem('HighScore'));
+
+if(localStorage.getItem('HighScore')==null){
+    localStorage.setItem('HighScore', "0");
+}
 
 gameLoop();
 enemyLoop();
@@ -19,12 +23,13 @@ enemyLoop();
 function enemyLoop() {
     enemy_js.style.top = getRandomInt(10,50)+"%";
     enemy_js.style.left = getRandomInt(5,90)+"%";
-    enemy_speed+=0.05;
+    enemy_speed+=0.1;
 }
 
 function gameLoop() {
     document.getElementById("time").innerHTML = "Time : "+time.toFixed(2);
     document.getElementById("score").innerHTML = "Score : "+score;
+    document.getElementById("highscore").innerHTML = "High Score : "+localStorage.getItem("HighScore");
     time+=0.01;
 
     bullet_js.style.top = parseFloat(bullet_js.style.top)-0.5+"%";
@@ -61,26 +66,33 @@ function collisionDetector(){
     if(Math.abs(parseFloat(ship_js.style.top)-parseFloat(enemy_js.style.top))<5 &&
         Math.abs(parseFloat(ship_js.style.left)-parseFloat(enemy_js.style.left))<5){
         alert("Game Over, Your final score is "+score);
+        
+        console.log(parseInt(localStorage.getItem('HighScore')));
+
+        if(parseInt(localStorage.getItem('HighScore'))<score){
+            localStorage.setItem('HighScore', score+"");
+        }
+
         score=0;
         time=0;
+        enemy_speed=0.1;
         enemyLoop();
-        location.reload();
     }
 }
 
 function arrowKey(e) {
     e = e || window.event;
     if (e.keyCode == '38') {    // up arrow
-        ship_js.style.top = parseInt(ship_js.style.top)-1+"%";
+        ship_js.style.top = parseInt(ship_js.style.top)-5+"%";
     }
     else if (e.keyCode == '40') {   // down arrow
-        ship_js.style.top = parseInt(ship_js.style.top)+1+"%";
+        ship_js.style.top = parseInt(ship_js.style.top)+5+"%";
     }
     else if (e.keyCode == '37') {   // left arrow
-        ship_js.style.left = parseInt(ship_js.style.left)-1+"%";
+        ship_js.style.left = parseInt(ship_js.style.left)-5+"%";
     }
     else if (e.keyCode == '39') {   // right arrow
-        ship_js.style.left = parseInt(ship_js.style.left)+1+"%";
+        ship_js.style.left = parseInt(ship_js.style.left)+5+"%";
     }
     else if (e.keyCode == '32') {   //space
         if(bullet_js.style.display == "none"){
