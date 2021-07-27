@@ -16,3 +16,7 @@ body {
 #Ship {
     position:absolute;
 }
+
+#Enemy {
+    position:absolute;
+}
