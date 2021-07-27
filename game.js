@@ -18,10 +18,22 @@ if(localStorage.getItem('HighScore')==null){
     localStorage.setItem('HighScore', "0");
 }
 
+var imgArray = ['enemy1.png', 'enemy2.png', 'enemy3.png', 'enemy0.png'];
+var basePath="./enemy/";
+
+function imgRandom() {
+    var rand = imgArray[Math.floor(Math.random() * imgArray.length)];
+    var image = new Image();
+    image.src = basePath+rand;
+    document.getElementById('Enemy').appendChild(image);
+}
+
 gameLoop();
 enemyLoop();
 
 function enemyLoop() {
+    document.getElementById('Enemy').innerHTML = "";
+    imgRandom();
     enemy_js.style.top = getRandomInt(10,50)+"%";
     enemy_js.style.left = getRandomInt(5,90)+"%";
 }
