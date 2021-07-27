@@ -1,11 +1,15 @@
 body {
-    background-color:darkblue;
+    background-image: url("./back.jpg"); 
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100% 100%;
 }
 
 .Info {
     position: relative;
     display: flex;
     text-align: center;
+    color:aliceblue;
     justify-content: space-between;
     margin-top: 45px;
     margin-left: 45px;
