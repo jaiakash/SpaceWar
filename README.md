@@ -7,24 +7,17 @@ they are threatened by your presence. Design a Web Shooting Game using
 HTML and Canvas API depicting the above situational battle between your
 Spaceship and the Whitespikes.
 
-## Basic Mode
-1. Users should be able to move the spaceship in all four directions. <b>Done</b> The
-aliens will be moving in the top to bottom direction continuously. <b>Done</b> Once an alien collides with the spaceship, it is destroyed. <b>Done</b>
+## Basic Mode (All Done)
 
-2. Create a scoreboard and be creative with the scoring system. <b>Done</b> Think how you can have different scoring based on the aliens shot. At the end of the
-game, both the game score and high score should be printed. <b>Done</b>
-
-3. Have a timer system, such that the User is advanced to a higher level if
-the spaceship survives till a certain time. 
-Speed of enemy increases every 10 seconds <b>Done</b>
-
-4. Once the user crosses a certain level bonus points should be awarded.
-Point each kill gets added after each 30 seconds.
-<b>Done</b>
-
-5. Added background music. Poket Tanks one ;)
-<b>Done</b>
-
+## Hacker Mode
+1. Have different categories of aliens in the game. The spawned aliens
+should be randomized in terms of categories.
+2. Different aliens should require different amounts of bullet shots to be
+killed.
+3. Have the feature for bonus powers for the spaceship once a certain score
+has been obtained on the scoreboard.
+4. Think about how you can add bonuses or special levels to the game and
+how will be the scoring for such levels.
 ## Git (All Done)
 1. Used git from terminal to push commits.
 2. Added readme file with the completed task details.
